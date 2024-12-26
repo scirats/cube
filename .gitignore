@@ -23,7 +23,7 @@ vendor/
 *.trace
 
 # Go workspace files
-*.mod
+#*.mod
 *.sum
 
 # IDE/editor specific files
