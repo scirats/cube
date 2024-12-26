@@ -5,6 +5,7 @@ import (
 
 	"github.com/rs/zerolog"
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
 
 var log zerolog.Logger
@@ -18,10 +19,15 @@ type Engine interface {
 }
 
 type DevCube struct {
-	Engine Engine
+	ConfigDir            string
+	Config               *viper.Viper
+	Engine               Engine
+	WorkingDirectoryPath string
+	WorkingDirectoryName string
 }
 
 var Version string = "1.0.0"
+var rootConfigDir string = ".devcube"
 var cube DevCube
 
 func init() {
@@ -51,6 +57,8 @@ var startCmd = &cobra.Command{
 
 func (d *DevCube) PreRun(_ *cobra.Command, _ []string) {
 	d.SetLogLevel()
+	d.ParseConfig()
+	d.SetDefaults()
 	d.SetEngine()
 }
 
