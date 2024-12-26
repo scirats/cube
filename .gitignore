@@ -1,0 +1,60 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Executable files
+*.out
+
+# Test binary
+*.test
+
+# Output of the build process
+/bin/
+/build/
+/dist/
+
+# Dependency directories (typically not included in version control)
+vendor/
+
+# Logs and debug files
+*.log
+*.trace
+
+# Go workspace files
+*.mod
+*.sum
+
+# IDE/editor specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+
+# Go coverage files
+*.cover
+*.cov
+
+# Temporary files
+*.tmp
+*.temp
+*.old
+
+# Config and environment files
+.env
+.env.*
+
+# Docker-related files
+docker-compose.override.yml
+
+# MacOS specific files
+.DS_Store
+
+# Windows specific files
+Thumbs.db
+desktop.ini
+
+# Linux specific files
+*.un~
