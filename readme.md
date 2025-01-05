@@ -26,7 +26,7 @@ dots {
 					name = "example name"
 				}
 			}
-			credentials = "credential-1", "credential-2"
+			credentials = "https://<user>:<token>@github.com", "https://<user>:<token>@gitlab.com"
 		}
 	}
 }
