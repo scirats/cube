@@ -159,6 +159,8 @@ func (c *Cube) InstallDeps() bool {
 				}
 			}
 		}
+
+		isInstalled = true
 	}
 
 	return isInstalled
