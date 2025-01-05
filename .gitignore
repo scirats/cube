@@ -59,4 +59,5 @@ desktop.ini
 # Linux specific files
 *.un~
 
-.devcube
+data.exo
+

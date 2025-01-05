@@ -14,21 +14,22 @@ cube start <file>
 *example*
 
 ```
-ports = "3000:3000"
-dots = "my-user/dotfiles"
-source {
-	repo = "https://github.com/scirats/scirats.git"
-	name = "my-user"
-	email = "my-user@example.com"
-	token = "my-token"
+deps = "npm", "nodejs"
+workspace = "https://github.com/scirats/scirats.git"
+dots {
+	repo = "https://github.com/heaveless/dotfiles.git"
+	ext {
+		git {
+			config {
+				user {
+					email = "user@scirats.com"
+					name = "example name"
+				}
+			}
+			credentials = "credential-1", "credential-2"
+		}
+	}
 }
-container = `
-	FROM alpine:latest
 
-	RUN apk update && \
-		apk add --no-cache neovim git
-	
-	CMD ["sleep", "infinity"]
-`
 ```
 
