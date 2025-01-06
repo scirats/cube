@@ -129,7 +129,6 @@ func (c *Cube) InstallExtFile(folder string, file string, content string)  {
 func (c *Cube) InstallDeps() bool {
 	isInstalled := c.IsInstalled()
 	if !isInstalled {
-		c.InstallWorkspace()
 		c.InstallDots()
 
 		if c.Config.IsSet("post.dots.ext") {
@@ -160,6 +159,8 @@ func (c *Cube) InstallDeps() bool {
 			}
 		}
 
+		c.InstallWorkspace()
+		
 		isInstalled = true
 	}
 
